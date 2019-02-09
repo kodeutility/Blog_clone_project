@@ -7,22 +7,22 @@
     {{ post.publication_date }}
   </div>
 {% else %}
-  <a class='btn btn-default' href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+  <a class='btn btn-info' href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 {% endif %}
 
 <p class="postcontent">{{ post.title|safe|linebreaksbr }}</p>
 
 {% if user.is_authenticated %}
-  <a class="btn btn-primary" href="{% url 'edit_post' pk=post.pk %}">
-    <span class="glyphicon glyphicon-pencil"></span>
+  <a class="btn btn-info" href="{% url 'edit_post' pk=post.pk %}">
+    <i class="material-icons" style="font-size:15px;">create</i>
   </a>
-  <a class="btn btn-primary" href="{% url 'delete_post' pk=post.pk %}">
-    <span class="glyphicon glyphicon-remove"></span>
+  <a class="btn btn-danger" href="{% url 'delete_post' pk=post.pk %}">
+    <i class="material-icons" style="font-size:15px;">clear</i>
   </a>
 {% endif %}
 
 <hr>
-<a class='btn btn-primary btn-comment' href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
+<a class='btn btn-info' href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
 
 <div class="container">
   {% for comment in post.comment.all  %}
@@ -30,11 +30,11 @@
     {% if user.is_authenticated or comment.approved_comment %}
       {{ comment.create_date }}
         {% if not comment.approved_comment %}
-          <a class="btn btn-primary" href="{% url 'comment_approve' pk=post.pk %}">
-            <span class="glyphicon glyphicon-ok"></span>
+          <a class="btn btn-info" href="{% url 'comment_approve' pk=post.pk %}">
+            <i class="material-icons" style="font-size:15px;">check</i>
           </a>
-          <a class="btn btn-primary" href="{% url 'comment_remove' pk=post.pk %}">
-            <span class="glyphicon glyphicon-remove"></span>
+          <a class="btn btn-danger" href="{% url 'comment_remove' pk=post.pk %}">
+                <i class="material-icons" style="font-size:15px;">clear</i>
           </a>
         {% endif %}
 
