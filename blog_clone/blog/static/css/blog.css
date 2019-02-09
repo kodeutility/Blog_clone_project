@@ -6,3 +6,23 @@
 .bigbrand{
   font-size: 1.5em;
 }
+.centerstage{
+  margin-left: auto;
+  margin-right: auto;
+}
+.postdate{
+  text-align: center;
+}
+.posttitle{
+  font-family: 'Philosopher', sans-serif;
+  font-size: 3em;
+  text-align: center;
+}
+.postcontent{
+  font-family: 'Philosopher', sans-serif;
+  font-size: 1.5em;
+}
+.btn-comment{
+  position: absolute;
+  right: 0px;
+}
