@@ -24,13 +24,13 @@ class PostDetailView(DetailView):
 class CreatePostView(LoginRequiredMixin,CreateView):
     login_url = '/login/'
     redirect_field_name = 'blog/post_detail.html'
-    form_model = PostForm
+    form_class = PostForm
     model = Post
 
 class UpdatePostView(LoginRequiredMixin,UpdateView):
     login_url = '/login/'
     redirect_field_name = 'blog/post_detail.html'
-    form_model = PostForm
+    form_class = PostForm
     model = Post
 
 class DeletePostView(LoginRequiredMixin,DeleteView):
@@ -39,7 +39,7 @@ class DeletePostView(LoginRequiredMixin,DeleteView):
 
 class DraftListView(LoginRequiredMixin,ListView):
     login_url = '/login/'
-    redirect_field_name = 'blog/post_detail.html'
+    redirect_field_name = 'blog/post_list.html'
     model = Post
 
     def get_queryset(self):

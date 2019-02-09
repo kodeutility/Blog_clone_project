@@ -1,13 +1,12 @@
-{% extends 'blog/base.html'%}
+{%extends 'blog/base.html'%}
+{% block content_block %}
 
-{%block content%}
-
-</<div class="jumbotron">
-  <<h2>Please login:</h2>
-  <<h3>(Must be Superuser, please check with the site admin)</h3>
+<div class="jumbotron">
+  <h2>Please login:</h2>
+  <h4>(Must be Superuser, please check with the site admin)</h4>
 
   {% if form.errors %}
-        <<p>Your username and password did not match</p>
+        <p>Your username and password did not match</p>
   {% endif %}
   <form action="{% url 'login' %}" method="POST">
     {% csrf_token %}
@@ -16,4 +15,4 @@
   </form>
 </div>
 
-{%endblock%}
+{% endblock %}

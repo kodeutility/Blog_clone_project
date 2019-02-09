@@ -10,6 +10,9 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
 
+    <!--Bootstrap Font-->
+    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
     <!--Medium style editor-->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
@@ -19,6 +22,7 @@
 
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+
 
   </head>
   <body>
@@ -38,7 +42,7 @@
             <li class="nav-item active"><a class="nav-link" href='{% url 'logout' %}'>Logout</a></li>
             <li class="nav-item active nav-link">Welcome: {{ user.username }}</li>
           {% else %}
-            <li><a href='{% url 'login' %}'>Login</a></li>
+            <li class="nav-item active"><a class="nav-link" href='{% url 'login' %}'>Login</a></li>
           {% endif %}
         </ul>
       </div>
